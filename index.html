@@ -1,0 +1,811 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%232B3FA8%22/%3E%3Ctext x=%2232%22 y=%2242%22 font-family=%22Arial%22 font-weight=%22700%22 font-size=%2226%22 fill=%22white%22 text-anchor=%22middle%22%3EHC%3C/text%3E%3C/svg%3E"><meta property="og:title" content="Hamidou Cissé, Data Analyst"><meta property="og:description" content="Power BI, Excel, KoboToolbox et 5+ ans de suivi-évaluation. Disponible en télétravail."><meta property="og:type" content="website"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style><title>Hamidou Cissé, Data Analyst</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Hamidou Cissé, Data Analyst et spécialiste du suivi-évaluation : Power BI, Excel, KoboToolbox. Disponible en télétravail.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout : page de recrutement. Le visage et la promesse d'abord, puis les preuves (projets, parcours), puis le contact. */
+:root{
+  --bg:#F5F6FA; --surface:#FFFFFF; --sunk:#EEF0F6; --ink:#11142A; --muted:#565C77; --line:#DFE2EC;
+  --brand:#2B3FA8; --brand-ink:#FFFFFF; --brand-soft:#E7EAFA; --deep:#111633;
+  --gold:#B67C12; --gold-soft:#FAEFD8; --good:#1F7F55; --good-soft:#E1F3E9; --bad:#B4372F; --wa:#128C4A; --wa-ink:#FFFFFF;
+  --f-display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --f-body:"Inter","Segoe UI",system-ui,-apple-system,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  --r:16px; --shadow:0 24px 48px -28px rgba(17,22,51,.35);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0B0E1C; --surface:#141930; --sunk:#10142A; --ink:#ECEEF8; --muted:#A1A7C3; --line:#262C48;
+  --brand:#8E9DF8; --brand-ink:#0B0E1C; --brand-soft:#1D2450; --deep:#070914;
+  --gold:#EBB34E; --gold-soft:#33280F; --good:#6CD19E; --good-soft:#12301F; --bad:#F08A80; --wa:#25B864; --wa-ink:#06200F;
+  --shadow:0 24px 48px -28px rgba(0,0,0,.8); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0B0E1C; --surface:#141930; --sunk:#10142A; --ink:#ECEEF8; --muted:#A1A7C3; --line:#262C48;
+  --brand:#8E9DF8; --brand-ink:#0B0E1C; --brand-soft:#1D2450; --deep:#070914;
+  --gold:#EBB34E; --gold-soft:#33280F; --good:#6CD19E; --good-soft:#12301F; --bad:#F08A80; --wa:#25B864; --wa-ink:#06200F;
+  --shadow:0 24px 48px -28px rgba(0,0,0,.8); color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.gut{padding-left:max(20px, env(safe-area-inset-left, 0px));padding-right:max(20px, env(safe-area-inset-right, 0px))}
+.wrap{max-width:1160px;margin:0 auto}
+h1,h2,h3,h4{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.08;letter-spacing:-.015em}
+p{margin:0}
+img{height:auto}
+a{color:var(--brand)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+.eyebrow{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);font-weight:500}
+.ic{width:18px;height:18px;flex:none}
+
+/* Boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 22px;border-radius:11px;font-weight:600;font-size:15.5px;text-decoration:none;border:1.5px solid transparent;cursor:pointer;font-family:var(--f-body);line-height:1.2;white-space:nowrap}
+.btn-primary{background:var(--brand);color:var(--brand-ink)}
+.btn-primary:hover{filter:brightness(1.08)}
+.btn-ghost{background:var(--surface);color:var(--ink);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--brand);color:var(--brand)}
+.btn-sm{padding:9px 16px;font-size:14.5px}
+.btn-wa{background:var(--wa);color:var(--wa-ink)}
+.btn-wa:hover{filter:brightness(1.08)}
+.roles{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:22px;font-size:14px;color:var(--muted)}
+.roles span{padding:5px 11px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--ink);font-weight:500}
+.midcta{margin-top:28px;border-radius:22px;padding:36px 40px;background:var(--brand-soft);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center}
+.midcta h3{font-size:clamp(22px,2.6vw,30px)}
+.midcta p{margin-top:8px;color:var(--muted);font-size:16px}
+.midcta .acts{display:flex;flex-wrap:wrap;gap:10px}
+.why .acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.why .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.3)}
+.why .btn-ghost:hover{border-color:#fff;color:#fff}
+.en{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:44px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:44px;align-items:start}
+.en h2{font-size:clamp(26px,3.2vw,36px);margin-top:12px}
+.en .lead{margin-top:14px;color:var(--muted);font-size:16.5px}
+.enlist{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:10px;font-size:15px}
+.enlist li{display:grid;grid-template-columns:18px 1fr;gap:10px}
+.enlist .ic{width:16px;height:16px;margin-top:4px;color:var(--good)}
+.enside{display:grid;gap:12px;background:var(--sunk);border-radius:16px;padding:24px}
+.enside .btn{white-space:normal;overflow-wrap:anywhere}
+.enhead{font-family:var(--f-display);font-weight:700;font-size:19px}
+.encv{font-size:14.5px;color:var(--muted)}
+.encv .btn{width:100%}
+.ennote{font-size:13.5px;color:var(--muted)}
+.fab{position:fixed;right:max(24px, env(safe-area-inset-right, 0px));bottom:calc(24px + env(safe-area-inset-bottom, 0px));z-index:25;display:inline-flex;align-items:center;gap:10px;padding:13px 18px 13px 14px;border-radius:999px;background:var(--wa);color:var(--wa-ink);font-weight:600;font-size:15px;text-decoration:none;box-shadow:0 14px 30px -12px rgba(0,0,0,.45)}
+.fab .ic{width:22px;height:22px}
+.fab:hover{filter:brightness(1.08)}
+@media (prefers-reduced-motion:no-preference){.btn{transition:filter .15s,border-color .15s,transform .15s,color .15s}.btn:hover{transform:translateY(-1px)}}
+
+/* Navigation */
+.nav{position:sticky;top:env(safe-area-inset-top, 0px);z-index:20;background:color-mix(in srgb, var(--bg) 86%, transparent);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:21;background:var(--bg)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:66px}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);font-family:var(--f-display);font-weight:700;font-size:17px}
+.logo i{width:36px;height:36px;border-radius:10px;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font-style:normal;font-size:14px}
+.logo small{display:block;font-family:var(--f-body);font-weight:500;font-size:12.5px;color:var(--muted);letter-spacing:0;margin-top:2px}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+.nav ul a{color:var(--muted);text-decoration:none;font-size:15px;font-weight:500}
+.nav ul a:hover{color:var(--ink)}
+
+/* Hero */
+.hero{padding-block:72px 64px}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:64px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:9px;padding:7px 14px 7px 11px;border-radius:999px;background:var(--good-soft);color:var(--good);font-size:14px;font-weight:600}
+.badge::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--good);box-shadow:0 0 0 4px color-mix(in srgb, var(--good) 22%, transparent)}
+.hero .eyebrow{display:block;margin-top:28px}
+.hero h1{font-size:clamp(40px,5.6vw,68px);font-weight:800;margin-top:12px;letter-spacing:-.025em}
+.hero h1 em{font-style:normal;color:var(--brand)}
+.hero .sub{margin-top:22px;font-size:clamp(17px,1.5vw,19px);color:var(--muted);max-width:54ch}
+.hero .sub b{color:var(--ink);font-weight:600}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.facts{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:30px;padding-top:24px;border-top:1px solid var(--line);font-size:14.5px;color:var(--muted)}
+.facts span{display:inline-flex;align-items:center;gap:8px}
+.facts .ic{width:16px;height:16px;color:var(--brand)}
+
+.profile{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:14px;box-shadow:var(--shadow)}
+.profile img{display:block;width:100%;aspect-ratio:4/4.3;object-fit:cover;object-position:40% 30%;border-radius:14px}
+.profile .id{padding:16px 8px 6px;display:flex;justify-content:space-between;align-items:end;gap:12px}
+.profile .id b{display:block;font-family:var(--f-display);font-size:21px}
+.profile .id span{font-size:14px;color:var(--muted)}
+.profile .pbi{position:absolute;left:-26px;top:34px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px;box-shadow:var(--shadow);font-size:13px;color:var(--muted)}
+.profile .pbi b{display:block;font-family:var(--f-mono);font-size:19px;font-weight:500;color:var(--good)}
+.profile .exp{position:absolute;right:-22px;bottom:96px;background:var(--brand);color:var(--brand-ink);border-radius:12px;padding:10px 14px;box-shadow:var(--shadow);font-size:13px}
+.profile .exp b{display:block;font-family:var(--f-display);font-size:22px;line-height:1.1}
+
+/* Partenaires */
+.trust{border-block:1px solid var(--line);background:var(--surface)}
+.trust .wrap{display:flex;align-items:center;gap:20px 36px;flex-wrap:wrap;padding-block:22px}
+.trust .lbl{font-size:13.5px;color:var(--muted);max-width:180px;line-height:1.35}
+.trust ul{display:flex;flex-wrap:wrap;gap:12px 30px;list-style:none;margin:0;padding:0;flex:1}
+.trust li{font-family:var(--f-display);font-weight:700;font-size:17px;color:color-mix(in srgb, var(--ink) 55%, transparent);letter-spacing:-.01em;white-space:nowrap}
+
+/* Chiffres */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:64px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px 22px 20px}
+.stat b{display:block;font-family:var(--f-display);font-size:clamp(30px,3.4vw,40px);font-weight:700;letter-spacing:-.02em;color:var(--brand);line-height:1.1;font-variant-numeric:tabular-nums}
+.stat span{display:block;margin-top:6px;font-size:14.5px;color:var(--muted);line-height:1.45}
+
+section.block{padding-block:104px 0}
+.head{max-width:740px;margin-bottom:44px}
+.head h2{font-size:clamp(30px,4vw,46px);font-weight:700;margin-top:12px}
+.head p{margin-top:14px;color:var(--muted);font-size:17.5px}
+
+/* Valeur */
+.values{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.value{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px;display:flex;flex-direction:column}
+.value .vi{width:46px;height:46px;border-radius:12px;background:var(--brand-soft);color:var(--brand);display:grid;place-items:center;margin-bottom:20px}
+.value .vi .ic{width:22px;height:22px}
+.value h3{font-size:21px;margin-bottom:10px}
+.value p{color:var(--muted);font-size:15.5px}
+.value .gain{margin-top:auto;padding-top:18px;border-top:1px solid var(--line);font-size:14.5px;font-weight:600;color:var(--ink)}
+.value p + .gain{margin-top:20px}
+
+/* Projets phares */
+.feature{background:var(--surface);border:1px solid var(--line);border-radius:22px;overflow:hidden;margin-bottom:28px}
+.shot{display:block;position:relative;background:var(--sunk);padding:22px 22px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.shot img{display:block;width:100%;border-radius:12px 12px 0 0;border:1px solid var(--line);border-bottom:0;box-shadow:0 -10px 30px -18px rgba(17,22,51,.35)}
+.shot .open{position:absolute;right:36px;top:36px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:13.5px;font-weight:600;display:inline-flex;align-items:center;gap:6px;box-shadow:var(--shadow)}
+.shot:hover .open{color:var(--brand);border-color:var(--brand)}
+.fbody{padding:34px 36px 36px}
+.ftop{display:flex;justify-content:space-between;gap:24px;align-items:flex-start;flex-wrap:wrap}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.tag{font-family:var(--f-mono);font-size:12px;padding:4px 10px;border-radius:999px;background:var(--brand-soft);color:var(--brand);white-space:nowrap}
+.tag.d{background:var(--gold-soft);color:var(--gold)}
+.tag.n{background:var(--sunk);color:var(--muted);border:1px solid var(--line)}
+.feature h3{font-size:clamp(24px,2.8vw,32px);font-weight:700;max-width:34ch}
+.feature .one{margin-top:12px;color:var(--muted);font-size:16.5px;max-width:62ch}
+.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:30px;padding-top:28px;border-top:1px solid var(--line)}
+.cols h4{font-family:var(--f-mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.cols p,.cols li{font-size:15px}
+.cols ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.cols li{display:grid;grid-template-columns:18px 1fr;gap:8px}
+.cols li .ic{width:16px;height:16px;margin-top:4px;color:var(--good)}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:28px}
+.kpi{background:var(--sunk);border-radius:12px;padding:14px 16px}
+.kpi b{display:block;font-family:var(--f-display);font-size:24px;font-weight:700;line-height:1.15;font-variant-numeric:tabular-nums}
+.kpi b.up{color:var(--good)} .kpi b.warn{color:var(--gold)}
+.kpi span{font-size:13px;color:var(--muted)}
+
+/* Projets terrain */
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px;display:flex;flex-direction:column;min-width:0}
+.card .pi{width:46px;height:46px;border-radius:12px;background:var(--gold-soft);color:var(--gold);display:grid;place-items:center;margin-bottom:18px}
+.card .pi .ic{width:22px;height:22px}
+.card h3{font-size:20px;margin-bottom:10px}
+.card .desc{color:var(--muted);font-size:15px}
+.card ul{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:8px;font-size:14.5px}
+.card li{display:grid;grid-template-columns:18px 1fr;gap:8px}
+.card li .ic{width:15px;height:15px;margin-top:4px;color:var(--good)}
+.card .big{margin-top:auto;padding-top:20px;display:flex;align-items:baseline;gap:12px;border-top:1px solid var(--line)}
+.card ul + .big{margin-top:22px}
+.card .big b{white-space:nowrap;font-family:var(--f-display);font-size:30px;font-weight:700;color:var(--good);line-height:1;font-variant-numeric:tabular-nums}
+.card .big span{font-size:13.5px;color:var(--muted)}
+.card .foot{margin-top:16px;font-size:14px;color:var(--muted);display:flex;align-items:center;gap:8px;min-height:22px}
+.card .foot a{font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.mini-bars{display:grid;gap:9px;margin-top:16px}
+.mb{display:grid;grid-template-columns:118px 1fr 26px;gap:10px;align-items:center;font-size:13.5px}
+.mb .t{height:10px;border-radius:4px;background:var(--sunk);overflow:hidden}
+.mb .f{height:100%;border-radius:4px;background:var(--brand)}
+.mb .f.w{background:var(--gold)} .mb .f.m{background:var(--muted)}
+.mb b{font-family:var(--f-mono);font-weight:500;text-align:right;font-variant-numeric:tabular-nums}
+
+/* Méthode */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--line);border-radius:var(--r);background:var(--surface);overflow:hidden}
+.step{padding:28px 24px;border-left:1px solid var(--line)}
+.step:first-child{border-left:0}
+.step .n{font-family:var(--f-mono);font-size:13px;color:var(--gold);font-weight:500}
+.step h3{font-size:20px;margin:10px 0 8px}
+.step p{font-size:15px;color:var(--muted)}
+.step .tools{margin-top:14px;font-family:var(--f-mono);font-size:12px;color:var(--brand)}
+
+/* Parcours */
+.career{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:64px;align-items:start}
+.career .intro{position:sticky;top:100px}
+.career .intro h2{font-size:clamp(30px,3.6vw,42px);margin-top:12px}
+.career .intro p{margin-top:16px;color:var(--muted);font-size:17px}
+.career .intro p b{color:var(--ink);font-weight:600}
+.career .intro .btn{margin-top:26px}
+.tl{list-style:none;margin:0;padding:0;position:relative}
+.tl::before{content:"";position:absolute;left:7px;top:10px;bottom:10px;width:2px;background:var(--line)}
+.tl li{position:relative;padding:0 0 30px 38px}
+.tl li:last-child{padding-bottom:0}
+.tl li::before{content:"";position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--surface);border:3px solid var(--brand)}
+.tl li.now::before{background:var(--brand)}
+.tl .when{font-family:var(--f-mono);font-size:12.5px;color:var(--muted)}
+.tl h3{font-size:19px;margin-top:4px}
+.tl .org{font-size:14px;color:var(--brand);font-weight:600;margin-top:2px}
+.tl p{font-size:15px;color:var(--muted);margin-top:8px}
+.tl .now .when{color:var(--good);font-weight:500}
+
+/* Compétences */
+.skills{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:20px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px;min-width:0}
+.panel h3{font-size:20px;margin-bottom:8px}
+.sk{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line)}
+.sk:last-child{border-bottom:0;padding-bottom:0}
+.sk b{font-weight:600}
+.sk small{grid-column:1/-1;color:var(--muted);font-size:13.5px}
+.meter{display:flex;align-items:center;gap:10px;font-family:var(--f-mono);font-size:12px;color:var(--muted);white-space:nowrap}
+.meter i{display:flex;gap:3px}
+.meter i::before,.meter i::after{content:none}
+.meter s{display:block;width:16px;height:6px;border-radius:2px;background:var(--line);text-decoration:none}
+.meter s.on{background:var(--brand)}
+.meter.wip s.on{background:var(--gold)}
+.stack{display:grid;gap:20px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{font-size:14px;padding:6px 12px;border-radius:9px;background:var(--sunk);border:1px solid var(--line)}
+.lang{display:flex;justify-content:space-between;gap:12px;font-size:15px;padding:9px 0;border-bottom:1px solid var(--line)}
+.lang:last-child{border-bottom:0}
+.lang span{color:var(--muted)}
+.edu{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.8fr);gap:20px;margin-top:20px}
+.certs{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:14px}
+.certs li{display:grid;grid-template-columns:52px 1fr;gap:12px;font-size:15px}
+.certs .y{font-family:var(--f-mono);font-size:13px;color:var(--gold);padding-top:2px}
+.certs small{display:block;color:var(--muted);font-size:13.5px}
+.certs-2{grid-template-columns:1fr 1fr;column-gap:24px}
+
+/* Pourquoi moi */
+.why{background:var(--deep);color:#EEF0FA;border-radius:26px;padding:60px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:52px}
+.why .eyebrow{color:#AEB8FA}
+.why h2{font-size:clamp(28px,3.6vw,42px);margin-top:12px;color:#fff}
+.why p.lead{margin-top:16px;color:#B9BFDB;font-size:17px}
+.why ul{list-style:none;margin:0;padding:0;display:grid;gap:24px}
+.why li{display:grid;grid-template-columns:44px 1fr;gap:16px}
+.why li i{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.08);display:grid;place-items:center;color:#F3C46A}
+.why li i .ic{width:21px;height:21px}
+.why li b{display:block;color:#fff;font-size:17px;margin-bottom:3px}
+.why li span{color:#B9BFDB;font-size:15px}
+
+/* Transmettre */
+.teach{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.mod{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.mod b{font-family:var(--f-display);font-size:19px}
+.mod p{font-size:14.5px;color:var(--muted);margin-top:6px}
+.mod .soon{display:inline-block;margin-top:10px;font-family:var(--f-mono);font-size:12px;color:var(--gold)}
+.proofs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
+.proofs div{border-radius:var(--r);padding:18px 20px;background:var(--good-soft);font-size:14.5px}
+.proofs b{display:block;color:var(--good);font-family:var(--f-display);font-size:17px;margin-bottom:4px}
+
+/* Contact */
+.contact{padding-block:104px 80px}
+.cbox{background:var(--brand);color:var(--brand-ink);border-radius:26px;padding:56px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start}
+.cbox .eyebrow{color:inherit;opacity:.8}
+.cbox h2{font-size:clamp(32px,4.2vw,50px);font-weight:800;margin-top:12px}
+.cbox .lead{margin-top:16px;font-size:17px;opacity:.9;max-width:44ch}
+.practical{display:grid;grid-template-columns:1fr 1fr;gap:14px 24px;margin-top:32px;padding-top:24px;border-top:1px solid color-mix(in srgb, var(--brand-ink) 25%, transparent);font-size:14.5px}
+.practical small{display:block;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;opacity:.7}
+.clist{display:grid;gap:12px}
+.cl{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:14px;align-items:center;background:color-mix(in srgb, var(--brand-ink) 11%, transparent);border:1px solid color-mix(in srgb, var(--brand-ink) 20%, transparent);border-radius:14px;padding:13px 15px}
+.cl .ci{width:44px;height:44px;border-radius:11px;background:var(--brand-ink);color:var(--brand);display:grid;place-items:center}
+.cl .ci .ic{width:20px;height:20px}
+.cl small{display:block;font-size:12px;opacity:.75;font-family:var(--f-mono);letter-spacing:.05em;text-transform:uppercase}
+.cl a{color:inherit;text-decoration:none;font-weight:600;font-size:17px;overflow-wrap:anywhere}
+.cl a:hover{text-decoration:underline}
+.copy{font:inherit;font-size:13px;font-weight:600;border:1px solid color-mix(in srgb, var(--brand-ink) 40%, transparent);background:transparent;color:inherit;padding:7px 12px;border-radius:8px;cursor:pointer;white-space:nowrap}
+.copy:hover{background:color-mix(in srgb, var(--brand-ink) 15%, transparent)}
+.cvrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.cvrow a{display:inline-flex;align-items:center;gap:8px;padding:11px 16px;border-radius:10px;background:var(--brand-ink);color:var(--brand);font-weight:600;font-size:14.5px;text-decoration:none}
+.cvnote{font-size:14px;opacity:.85;margin-top:6px}
+footer{padding-block:0 100px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px;color:var(--muted);border-top:1px solid var(--line);padding-top:24px}
+footer a{color:var(--muted)}
+
+.mbar{display:none}
+
+@media (max-width:1000px){
+  .nav ul{display:none}
+  .hero .wrap{grid-template-columns:1fr;gap:48px}
+  .profile{max-width:440px}
+  .profile .pbi{left:auto;right:16px;top:16px}
+  .profile .exp{right:16px}
+  .stats{grid-template-columns:1fr 1fr}
+  .values,.grid3{grid-template-columns:1fr}
+  .cols{grid-template-columns:1fr;gap:20px}
+  .kpis{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .step:nth-child(3){border-left:0}
+  .step:nth-child(n+3){border-top:1px solid var(--line)}
+  .career{grid-template-columns:1fr;gap:40px}
+  .career .intro{position:static}
+  .skills,.edu,.why,.cbox,.en{grid-template-columns:1fr}
+  .teach{grid-template-columns:1fr 1fr}
+  .proofs{grid-template-columns:1fr}
+}
+@media (max-width:620px){
+  .hero{padding-block:44px 52px}
+  .hero .ctas .btn{flex:1 1 100%}
+  .nav .btn-sm{display:none}
+  section.block{padding-block:80px 0}
+  .stats{margin-top:44px;gap:12px}
+  .stat{padding:18px}
+  .feature{border-radius:18px}
+  .shot{padding:12px 12px 0}
+  .shot .open{right:20px;top:20px;padding:5px 10px;font-size:12.5px}
+  .fbody{padding:24px 20px 26px}
+  .card,.panel{padding:22px}
+  .steps,.teach{grid-template-columns:1fr}
+  .step{border-left:0}
+  .step:nth-child(n+2){border-top:1px solid var(--line)}
+  .certs-2{grid-template-columns:1fr}
+  .why,.cbox{padding:28px 22px;border-radius:20px}
+  .practical{grid-template-columns:1fr}
+  .cl{grid-template-columns:1fr auto}
+  .cl .ci{display:none}
+  .trust li{font-size:15px}
+  .fab{display:none}
+  .en{padding:24px 20px;border-radius:18px}
+  .midcta{grid-template-columns:1fr;padding:26px 22px}
+  .midcta .acts .btn,.why .acts .btn{flex:1 1 100%}
+  .mbar{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--surface);border-top:1px solid var(--line);
+    padding:10px max(16px, env(safe-area-inset-right, 0px)) calc(10px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px))}
+  .mbar .btn{padding:12px 8px;font-size:14.5px;gap:7px}
+  footer{padding-block:0 110px}
+}
+</style></head><body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3z"/></symbol>
+  <symbol id="i-mail"viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+  <symbol id="i-in" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.2c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-mobile" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></symbol>
+  <symbol id="i-form" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></symbol>
+  <symbol id="i-sprout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V11"/><path d="M12 11C12 7 9 4 4 4c0 4 3 7 8 7z"/><path d="M12 13c0-3 2.5-6 7-6 0 3.5-2.5 6-7 6z"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M12 18v-6M9 15l3 3 3-3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-lang" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h8M8 3v2M6 5c0 4 2.5 7 6 8M10 5c0 4-3 8-6 9M13 21l4-10 4 10M14.5 18h5"/></symbol>
+</svg>
+
+<nav class="nav gut" aria-label="Navigation principale">
+  <div class="wrap">
+    <a class="logo" href="#top"><i>HC</i><span>Hamidou Cissé<small>Data Analyst</small></span></a>
+    <ul>
+      <li><a href="#projets">Projets</a></li>
+      <li><a href="#parcours">Parcours</a></li>
+      <li><a href="#competences">Compétences</a></li>
+      <li><a href="#transmettre">Formation des jeunes</a></li>
+      <li><a href="#english" lang="en">English</a></li>
+    </ul>
+    <a class="btn btn-primary btn-sm" href="#contact">Me contacter</a>
+  </div>
+</nav>
+
+<header class="hero gut" id="top">
+  <div class="wrap">
+    <div>
+      <span class="badge">Disponible pour un poste · télétravail partout dans le monde</span>
+      <span class="eyebrow">Data Analyst · Suivi-évaluation</span>
+      <h1>Je transforme vos données en <em>décisions</em>.</h1>
+      <p class="sub">Plus de <b>5 ans de collecte, de suivi d'indicateurs et de reporting</b> sur le terrain, et des tableaux de bord <b>Power BI</b> qui disent clairement où vous gagnez, où vous perdez et quoi faire ensuite.</p>
+      <p class="roles">Postes visés <span>Data Analyst</span><span>Analyste BI · Power BI</span><span>Chargé S&amp;E · MEAL</span><span>Formateur data</span></p>
+      <div class="ctas">
+        <a class="btn btn-wa" href="https://wa.me/22671612611?text=Bonjour%20Hamidou%2C%20j%27ai%20vu%20votre%20portfolio%20et%20je%20souhaite%20%C3%A9changer%20au%20sujet%20d%27une%20opportunit%C3%A9." target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg>Écrire sur WhatsApp</a>
+        <a class="btn btn-primary" href="tel:+22671612611"><svg class="ic"><use href="#i-phone"/></svg>Appeler</a>
+        <a class="btn btn-ghost" href="mailto:hamidoucisse904@gmail.com?subject=Opportunit%C3%A9%20Data%20Analyst"><svg class="ic"><use href="#i-mail"/></svg>E-mail</a>
+      </div>
+      <div class="facts">
+        <span><svg class="ic"><use href="#i-pin"/></svg>Dori, Burkina Faso</span>
+        <span><svg class="ic"><use href="#i-clock"/></svg>Fuseau GMT (UTC+0)</span>
+        <span><svg class="ic"><use href="#i-lang"/></svg>Français · Fulfuldé · Anglais</span>
+      </div>
+    </div>
+    <figure class="profile" style="margin:0">
+      <img src="photo.jpg" alt="Portrait de Hamidou Cissé" width="560" height="560">
+      <figcaption class="id"><div><b>Hamidou Cissé</b><span>Sociologue · Data Analyst</span></div></figcaption>
+      <div class="exp"><b>5+ ans</b>terrain et données</div>
+    </figure>
+  </div>
+</header>
+
+<div class="trust gut" aria-label="Partenaires">
+  <div class="wrap">
+    <p class="lbl">Expérience sur des projets mis en œuvre avec</p>
+    <ul><li>FAO</li><li>PAM</li><li>OIM</li><li>NRC</li><li>CARE</li><li>Save the Children</li><li>EDUCO</li><li>Children Believe</li><li>PBF</li></ul>
+  </div>
+</div>
+
+<main>
+<div class="gut"><div class="wrap stats" aria-label="Chiffres clés">
+  <div class="stat"><b>5+ ans</b><span>de collecte, suivi d'indicateurs et reporting</span></div>
+  <div class="stat"><b>690</b><span>ménages suivis dans le projet RISE</span></div>
+  <div class="stat"><b>450</b><span>agropasteurs ciblés pour un projet FAO</span></div>
+  <div class="stat"><b>5</b><span>projets data, de la collecte au tableau de bord</span></div>
+</div></div>
+
+<section class="block gut" id="valeur">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Ce que j'apporte</span>
+      <h2>Moins de temps à chercher les chiffres, plus de temps à décider.</h2>
+      <p>Un analyste qui comprend le terrain autant que les tableaux de bord, et qui livre des outils que vos équipes utilisent vraiment.</p>
+    </div>
+    <div class="values">
+      <article class="value">
+        <span class="vi"><svg class="ic"><use href="#i-target"/></svg></span>
+        <h3>Des décisions éclairées</h3>
+        <p>Je pars de votre question métier, pas des données. Chaque tableau de bord répond à la question : où agir en priorité ?</p>
+        <p class="gain">Marge, pertes, ruptures et objectifs visibles en un coup d'œil</p>
+      </article>
+      <article class="value">
+        <span class="vi"><svg class="ic"><use href="#i-shield"/></svg></span>
+        <h3>Des données fiables dès la source</h3>
+        <p>Je conçois les formulaires de collecte avec contrôles et sauts logiques, et je vérifie les données avant qu'elles n'arrivent dans vos rapports.</p>
+        <p class="gain">Moins de nettoyage, des chiffres auxquels on peut se fier</p>
+      </article>
+      <article class="value">
+        <span class="vi"><svg class="ic"><use href="#i-mobile"/></svg></span>
+        <h3>Des outils sur mesure</h3>
+        <p>Quand l'outil n'existe pas, je le construis : application hors ligne, modèle Excel, rapport automatisé. Et je forme vos équipes à s'en servir.</p>
+        <p class="gain">Des processus plus rapides, des équipes autonomes</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block gut" id="projets">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Projets</span>
+      <h2>Des tableaux de bord qui répondent à de vraies questions.</h2>
+      <p>Deux cas pratiques Power BI, puis trois réalisations issues de mon travail sur le terrain.</p>
+    </div>
+
+    <article class="feature">
+      <a class="shot" href="https://app.powerbi.com/view?r=eyJrIjoiODdhYWZjMTAtMDBhMC00MzBmLTk3Y2ItYWNjNzg3YzFjZGQyIiwidCI6IjFlODMyYTBmLTdiNWQtNGRmMC1hMjg5LWMyM2Y4YzU4MmIwYSJ9" target="_blank" rel="noopener" aria-label="Ouvrir le dashboard DJAMOU dans Power BI">
+        <img src="djamou-hd.jpg" alt="Dashboard DJAMOU : indicateurs de marge, marge mensuelle, marge par ville, taux de marge par catégorie et par ville" width="1600" height="884" loading="lazy">
+        <span class="open">Ouvrir le dashboard <svg class="ic" style="width:14px;height:14px"><use href="#i-arrow"/></svg></span>
+      </a>
+      <div class="fbody">
+        <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Modélisation</span><span class="tag d">Projet certifiant · Eureka Services</span><span class="tag n">Cas pratique · données fictives</span></div>
+        <h3>DJAMOU : où nos vivres créent de la marge, se perdent ou manquent</h3>
+        <p class="one">Rapport de 5 pages pour piloter un négoce de vivres dans 7 villes du Burkina Faso, de janvier 2024 à octobre 2026.</p>
+        <div class="cols">
+          <div><h4>La question</h4><p>Quels produits et quelles villes créent de la valeur après la logistique, et où l'argent se perd-il en pertes et en ruptures ?</p></div>
+          <div><h4>Ce que j'ai construit</h4><ul>
+            <li><svg class="ic"><use href="#i-check"/></svg><span>Modèle de données et mesures DAX de marge, démarque et rotation</span></li>
+            <li><svg class="ic"><use href="#i-check"/></svg><span>Matrice catégorie × ville avec alerte sur les marges négatives</span></li>
+            <li><svg class="ic"><use href="#i-check"/></svg><span>Pages ruptures, facteurs externes et méthodologie</span></li></ul></div>
+          <div><h4>Ce que montrent les données</h4><ul>
+            <li><svg class="ic"><use href="#i-check"/></svg><span>Les céréales sont vendues à perte à Sebba (−4,4 %) et Seytenga (−0,7 %) après logistique</span></li>
+            <li><svg class="ic"><use href="#i-check"/></svg><span>Les céréales concentrent la plus forte démarque : 116 M FCFA</span></li>
+            <li><svg class="ic"><use href="#i-check"/></svg><span>Ouagadougou porte la marge : 192 M FCFA</span></li></ul></div>
+        </div>
+        <div class="kpis">
+          <div class="kpi"><b>1 161 M</b><span>FCFA de marge brute</span></div>
+          <div class="kpi"><b class="up">12,4 %</b><span>taux de marge</span></div>
+          <div class="kpi"><b>0,8 %</b><span>taux de perte</span></div>
+          <div class="kpi"><b class="warn">3,9 %</b><span>taux de rupture</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="feature">
+      <a class="shot" href="https://app.powerbi.com/view?r=eyJrIjoiMTJiYmQxZDQtMGJiNS00ZDJjLTlkNDYtODdiYzVkYTVmMjkyIiwidCI6IjFlODMyYTBmLTdiNWQtNGRmMC1hMjg5LWMyM2Y4YzU4MmIwYSJ9" target="_blank" rel="noopener" aria-label="Ouvrir le dashboard de synthèse des ventes dans Power BI">
+        <img src="ventes-hd.jpg" alt="Dashboard Synthèse exécutive : CA YTD, CA du mois, panier moyen, atteinte de l'objectif, CA mensuel N contre N-1 et cumul annuel" width="1600" height="881" loading="lazy">
+        <span class="open">Ouvrir le dashboard <svg class="ic" style="width:14px;height:14px"><use href="#i-arrow"/></svg></span>
+      </a>
+      <div class="fbody">
+        <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Time intelligence</span><span class="tag n">Cas pratique</span></div>
+        <h3>Synthèse exécutive des ventes sur 20 pays</h3>
+        <p class="one">Dashboard de direction de 4 pages (Synthèse, Tendances, Objectifs et pays, Qualité des données) pour suivre le chiffre d'affaires au 30 septembre 2026.</p>
+        <div class="cols">
+          <div><h4>La question</h4><p>Sommes-nous en avance sur l'an dernier et sur l'objectif, et où finira l'année ?</p></div>
+          <div><h4>Ce que j'ai construit</h4><ul>
+            <li><svg class="ic"><use href="#i-check"/></svg><span>Mesures YTD, MTD, N-1, variation M-1 et panier moyen</span></li>
+            <li><svg class="ic"><use href="#i-check"/></svg><span>Projection du CA de fin d'année</span></li>
+            <li><svg class="ic"><use href="#i-check"/></svg><span>Tableau mensuel avec seuils de couleur sur l'atteinte</span></li></ul></div>
+          <div><h4>Ce que montrent les données</h4><ul>
+            <li><svg class="ic"><use href="#i-check"/></svg><span>La croissance est forte (+21,3 %) mais l'objectif n'est atteint qu'à 90,4 %</span></li>
+            <li><svg class="ic"><use href="#i-check"/></svg><span>L'écart à l'objectif atteint 56 563 $ fin septembre</span></li>
+            <li><svg class="ic"><use href="#i-check"/></svg><span>Juin est le mois le plus faible (35 332 $)</span></li></ul></div>
+        </div>
+        <div class="kpis">
+          <div class="kpi"><b>531 K$</b><span>CA cumulé (YTD)</span></div>
+          <div class="kpi"><b class="up">+21,3 %</b><span>vs N-1 à date</span></div>
+          <div class="kpi"><b class="warn">90,4 %</b><span>de l'objectif atteint</span></div>
+          <div class="kpi"><b>758 K$</b><span>projection fin d'année</span></div>
+        </div>
+      </div>
+    </article>
+
+    <div class="grid3">
+      <article class="card">
+        <span class="pi"><svg class="ic"><use href="#i-mobile"/></svg></span>
+        <div class="tags"><span class="tag">Android</span><span class="tag">Hors ligne</span></div>
+        <h3>CRUS-SAME : application de terrain</h3>
+        <p class="desc">Prototype d'application pour cibler, assister et suivre les ménages vulnérables du Sahel, même sans réseau.</p>
+        <ul>
+          <li><svg class="ic"><use href="#i-check"/></svg><span>Score de vulnérabilité automatique et QR code par ménage</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span>Distributions, stocks et rapprochement</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span>Suivi SCA, rCSI et HDDS, exports Excel</span></li>
+        </ul>
+        <div class="big"><b>690</b><span>ménages visés par la phase pilote proposée</span></div>
+        <p class="foot"><a href="https://wa.me/22671612611?text=Bonjour%20Hamidou%2C%20je%20souhaite%20une%20d%C3%A9monstration%20de%20l%27application%20CRUS-SAME." target="_blank" rel="noopener">Demander une démonstration <svg class="ic" style="width:14px;height:14px"><use href="#i-arrow"/></svg></a></p>
+      </article>
+      <article class="card">
+        <span class="pi"><svg class="ic"><use href="#i-form"/></svg></span>
+        <div class="tags"><span class="tag">KoboToolbox</span><span class="tag">XLSForm</span></div>
+        <h3>Formulaire de ciblage des ménages</h3>
+        <p class="desc">Collecte mobile pour prioriser les ménages vulnérables dans le projet RISE, au Burkina Faso.</p>
+        <ul>
+          <li><svg class="ic"><use href="#i-check"/></svg><span>Consentement éclairé et confidentialité</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span>Sauts conditionnels et indicateurs de vulnérabilité</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span>Coordonnées GPS de chaque ménage</span></li>
+        </ul>
+        <div class="big"><b>≈ 45</b><span>questions structurées en 4 blocs</span></div>
+        <p class="foot"><a href="https://ee.kobotoolbox.org/x/vWXyG7bj" target="_blank" rel="noopener">Voir le formulaire <svg class="ic" style="width:14px;height:14px"><use href="#i-arrow"/></svg></a></p>
+      </article>
+      <article class="card">
+        <span class="pi"><svg class="ic"><use href="#i-sprout"/></svg></span>
+        <div class="tags"><span class="tag">Excel</span><span class="tag">Rapport</span></div>
+        <h3>Suivi des bénéficiaires de semences</h3>
+        <p class="desc">Suivi de 30 ménages ayant reçu du sorgho et du niébé à Seytenga, campagne pluviale 2026.</p>
+        <div class="mini-bars" role="img" aria-label="Sur 30 ménages : 22 ont semé, 4 n'ont pas semé, 4 en situation inconnue.">
+          <div class="mb"><span>Ont semé</span><div class="t"><div class="f" style="width:73.3%"></div></div><b>22</b></div>
+          <div class="mb"><span>N'ont pas semé</span><div class="t"><div class="f w" style="width:13.3%"></div></div><b>4</b></div>
+          <div class="mb"><span>Inconnu</span><div class="t"><div class="f m" style="width:13.3%"></div></div><b>4</b></div>
+        </div>
+        <div class="big" style="margin-top:22px"><b>73 %</b><span>de semis, causes des écarts analysées</span></div>
+        <p class="foot"><a href="https://wa.me/22671612611?text=Bonjour%20Hamidou%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20votre%20suivi%20des%20b%C3%A9n%C3%A9ficiaires%20de%20semences." target="_blank" rel="noopener">En savoir plus <svg class="ic" style="width:14px;height:14px"><use href="#i-arrow"/></svg></a></p>
+      </article>
+    </div>
+
+    <div class="midcta">
+      <div>
+        <h3>Ces analyses, je peux les produire pour votre équipe.</h3>
+        <p>Parlons de vos données et de ce que vous voulez décider : un échange de 15 minutes suffit pour voir si mon profil vous convient.</p>
+      </div>
+      <div class="acts">
+        <a class="btn btn-wa" href="https://wa.me/22671612611?text=Bonjour%20Hamidou%2C%20j%27ai%20vu%20vos%20projets%20et%20je%20souhaite%20%C3%A9changer%20avec%20vous." target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg>WhatsApp</a>
+        <a class="btn btn-primary" href="tel:+22671612611"><svg class="ic"><use href="#i-phone"/></svg>Appeler</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block gut" id="methode">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Méthode</span>
+      <h2>Du terrain à la décision, en quatre étapes.</h2>
+      <p>La même démarche, que la donnée vienne d'un village ou d'un système de vente.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="n">Étape 1</span><h3>Comprendre</h3><p>Je clarifie la décision à prendre et les indicateurs qui comptent pour vous.</p><p class="tools">Cadre de mesure · KPI</p></div>
+      <div class="step"><span class="n">Étape 2</span><h3>Collecter</h3><p>Je conçois une collecte fiable, sur mobile, même hors ligne.</p><p class="tools">KoboToolbox · ODK · application</p></div>
+      <div class="step"><span class="n">Étape 3</span><h3>Analyser</h3><p>Je nettoie, je modélise et je calcule des indicateurs justes et vérifiables.</p><p class="tools">Excel · Power Query · DAX</p></div>
+      <div class="step"><span class="n">Étape 4</span><h3>Recommander</h3><p>Je livre un tableau de bord clair et des recommandations prêtes à l'action.</p><p class="tools">Power BI · rapports</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block gut" id="parcours">
+  <div class="wrap career">
+    <div class="intro">
+      <span class="eyebrow">Parcours</span>
+      <h2>Le terrain m'a appris ce que les chiffres veulent dire.</h2>
+      <p>Sociologue de formation, j'ai passé <b>plus de 5 ans au Conseil Régional des Unions du Sahel (CRUS)</b> à cibler des ménages, superviser des enquêtes, suivre des indicateurs et rédiger des rapports pour les partenaires.</p>
+      <p>Aujourd'hui <b>responsable des activités du projet RISE</b>, je mets cette expérience au service de l'analyse de données.</p>
+      <a class="btn btn-ghost" href="#contact"><svg class="ic"><use href="#i-doc"/></svg>Télécharger mon CV</a>
+    </div>
+    <ol class="tl">
+      <li class="now"><span class="when">Janv. 2026 – aujourd'hui</span><h3>Responsable des activités du projet RISE</h3><p class="org">CRUS · Seytenga</p><p>690 ménages organisés en coopératives et AVEC. Suivi des semences et de la production pluviale, chèvres laitières, collecte et rapports, développement de l'application CRUS-SAME.</p></li>
+      <li><span class="when">2025 – mai 2026</span><h3>Agent de distribution de vivres</h3><p class="org">CRUS / PAM · Gorom-Gorom et Markoye</p><p>Ciblage et enregistrement des ménages, organisation des sites, contrôle des listes et rapportage.</p></li>
+      <li><span class="when">Oct. 2023 – sept. 2024</span><h3>Assistant du Responsable Suivi-Évaluation</h3><p class="org">CRUS · Dori</p><p>Suivi des indicateurs, consolidation des données et reporting des projets. Rédaction de microprojets (SD3C), contribution à l'éditorial régional sur la sécurité alimentaire (FAO, CARE).</p></li>
+      <li><span class="when">Juin 2021 – sept. 2023</span><h3>Superviseur</h3><p class="org">CRUS · Dori</p><p>Supervision des distributions du PAM, documentation civile avec Save the Children, formations et groupements AVEC avec EDUCO.</p></li>
+      <li><span class="when">Juil. 2020 – mai 2021</span><h3>Animateur et chef d'équipe terrain</h3><p class="org">CRUS · Dori · financement PBF</p><p>Ciblage de 450 agropasteurs (FAO), appui à la vaccination de 13 000 ruminants, suivi hebdomadaire de la transhumance sur KoBo/ODK pour l'OIM.</p></li>
+      <li><span class="when">2021 – 2024</span><h3>Missions de collecte et de supervision</h3><p class="org">OIM · NRC · CARE · Children Believe · Réseau Billital Maroobé</p><p>Supervision d'enquêtes, analyse rapide genre, données IHEA, évaluation de projet, formation à KoBoToolbox.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="block gut" id="competences">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Compétences</span>
+      <h2>Une boîte à outils complète, qui continue de grandir.</h2>
+    </div>
+    <div class="skills">
+      <div class="panel">
+        <h3>Outils</h3>
+        <div class="sk"><b>Power BI</b><span class="meter" aria-label="Avancé, 4 sur 5"><i><s class="on"></s><s class="on"></s><s class="on"></s><s class="on"></s><s></s></i>Avancé</span><small>Modélisation, DAX, time intelligence, publication sur Power BI Service</small></div>
+        <div class="sk"><b>Excel</b><span class="meter" aria-label="Avancé, 4 sur 5"><i><s class="on"></s><s class="on"></s><s class="on"></s><s class="on"></s><s></s></i>Avancé</span><small>Formules, tableaux croisés, tableaux de bord, Power Query, Power Pivot</small></div>
+        <div class="sk"><b>KoboToolbox · ODK</b><span class="meter" aria-label="Avancé, 4 sur 5"><i><s class="on"></s><s class="on"></s><s class="on"></s><s class="on"></s><s></s></i>Avancé</span><small>XLSForm, KoBoCollect, gestion des serveurs, formation des enquêteurs</small></div>
+        <div class="sk"><b>Statistiques</b><span class="meter" aria-label="Intermédiaire, 3 sur 5"><i><s class="on"></s><s class="on"></s><s class="on"></s><s></s><s></s></i>Intermédiaire</span><small>Statistiques et probabilités appliquées à l'analyse</small></div>
+        <div class="sk"><b>MS Project</b><span class="meter" aria-label="Intermédiaire, 3 sur 5"><i><s class="on"></s><s class="on"></s><s class="on"></s><s></s><s></s></i>Intermédiaire</span><small>Planification et suivi-évaluation de projets</small></div>
+        <div class="sk"><b>SQL</b><span class="meter wip" aria-label="En formation"><i><s class="on"></s><s class="on"></s><s></s><s></s><s></s></i>En formation</span><small>Requêtes, jointures, agrégations</small></div>
+        <div class="sk"><b>Python</b><span class="meter wip" aria-label="En formation"><i><s class="on"></s><s></s><s></s><s></s><s></s></i>En formation</span><small>pandas, analyse et visualisation</small></div>
+      </div>
+      <div class="stack">
+        <div class="panel">
+          <h3>Domaines d'expertise</h3>
+          <div class="chips"><span class="chip">MEAL · suivi-évaluation</span><span class="chip">Qualité des données</span><span class="chip">Supervision d'enquêtes</span><span class="chip">HEA / IHEA</span><span class="chip">Ciblage des ménages</span><span class="chip">SCA · rCSI · HDDS</span><span class="chip">Sécurité alimentaire</span><span class="chip">AVEC · AGR</span><span class="chip">Pastoralisme</span><span class="chip">Genre et inclusion</span><span class="chip">Reporting bailleurs</span><span class="chip">IA pour l'analyse</span></div>
+        </div>
+        <div class="panel">
+          <h3>Langues</h3>
+          <div class="lang"><b>Français</b><span>Courant</span></div>
+          <div class="lang"><b>Fulfuldé</b><span>Langue maternelle</span></div>
+          <div class="lang"><b>Anglais</b><span>Moyen · écrit : bien</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="edu">
+      <div class="panel">
+        <h3>Formation</h3>
+        <ul class="certs">
+          <li><span class="y">2017</span><span>Sociologie, niveau Licence 3<small>Université Joseph Ki-Zerbo, Ouagadougou · stage en collecte et analyse de données</small></span></li>
+          <li><span class="y">2012</span><span>Baccalauréat A4, mention Assez-bien<small>Lycée provincial de Dori</small></span></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Certifications</h3>
+        <ul class="certs certs-2">
+          <li><span class="y">2026</span><span>Excel pour l'analyse · Statistiques<small>Eureka Services · Power BI et IA en cours</small></span></li>
+          <li><span class="y">2026</span><span>Sécurité en milieu hostile (HEIST)<small>Norwegian Refugee Council</small></span></li>
+          <li><span class="y">2026</span><span>Négociations humanitaires<small>FONGIH / NRC</small></span></li>
+          <li><span class="y">2024</span><span>Agriculture et accords de l'OMC<small>FAO eLearning Academy</small></span></li>
+          <li><span class="y">2021</span><span>Suivi-évaluation avec MS Project<small>SAM Consulting</small></span></li>
+          <li><span class="y">2018</span><span>Pédagogie générale et spécialisée<small>APERC</small></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block gut" id="pourquoi">
+  <div class="wrap">
+    <div class="why">
+      <div>
+        <span class="eyebrow">Pourquoi me recruter</span>
+        <h2>Le terrain, la technique et la pédagogie dans un seul profil.</h2>
+        <p class="lead">Beaucoup savent faire un graphique. Je sais aussi d'où vient chaque chiffre, ce qu'il veut dire sur le terrain et comment l'expliquer à ceux qui décident.</p>
+        <div class="acts">
+          <a class="btn btn-wa" href="https://wa.me/22671612611?text=Bonjour%20Hamidou%2C%20j%27ai%20vu%20votre%20portfolio%20et%20je%20souhaite%20%C3%A9changer%20au%20sujet%20d%27une%20opportunit%C3%A9." target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg>Écrire sur WhatsApp</a>
+          <a class="btn btn-ghost" href="#contact">Tous mes contacts</a>
+        </div>
+      </div>
+      <ul>
+        <li><i><svg class="ic"><use href="#i-pin"/></svg></i><div><b>Je connais le terrain</b><span>Des données collectées et suivies au plus près des ménages, dans des contextes difficiles.</span></div></li>
+        <li><i><svg class="ic"><use href="#i-mobile"/></svg></i><div><b>Je construis des solutions</b><span>De la collecte au tableau de bord, jusqu'à une application mobile complète.</span></div></li>
+        <li><i><svg class="ic"><use href="#i-chat"/></svg></i><div><b>J'explique simplement</b><span>Des résultats compris par la direction comme par les équipes, en trois langues.</span></div></li>
+        <li><i><svg class="ic"><use href="#i-globe"/></svg></i><div><b>Je travaille à distance</b><span>Autonome, à l'aise avec les outils en ligne, sur le fuseau GMT.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="block gut" id="transmettre">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Formation des jeunes</span>
+      <h2>Je forme aussi les jeunes et les équipes.</h2>
+      <p>Partager ce que je sais fait partie de mon métier. Pour une entreprise, c'est un analyste capable de rendre ses collègues autonomes.</p>
+    </div>
+    <div class="teach">
+      <div class="mod"><b>Kobo</b><p>Créer un formulaire, le déployer sur téléphone et récupérer les données.</p></div>
+      <div class="mod"><b>Excel</b><p>Nettoyer, croiser et présenter les données dans un tableau de bord.</p></div>
+      <div class="mod"><b>Power BI</b><p>Modéliser, écrire ses premières mesures DAX et raconter avec les chiffres.</p></div>
+      <div class="mod"><b>SQL · Python</b><p>Modules en préparation, au rythme de ma propre formation.</p><span class="soon">Bientôt</span></div>
+    </div>
+    <div class="proofs">
+      <div><b>Formateur KoBoToolbox</b>Formation à KoBoToolbox et KoBoCollect pour l'association DEWRAN, à Dori.</div>
+      <div><b>Formateur d'adultes</b>Sessions sur le genre, l'approche Aflatoun et l'EVF pour le projet PROMESSE-FP (EDUCO).</div>
+      <div><b>Pédagogue certifié</b>Certificat de pédagogie générale et spécialisée (APERC, 2018).</div>
+    </div>
+  </div>
+</section>
+
+<section class="block gut" id="english" lang="en">
+  <div class="wrap">
+    <div class="en">
+      <div>
+        <span class="eyebrow">In English</span>
+        <h2>Data Analyst open to remote roles worldwide.</h2>
+        <p class="lead">I turn field and business data into clear decisions. Over 5 years of data collection, indicator tracking and reporting at the Regional Council of Sahel Unions (CRUS), on projects implemented with FAO, WFP, IOM and NRC. I build Power BI dashboards that show where an organization gains, loses and should act first.</p>
+        <ul class="enlist">
+          <li><svg class="ic"><use href="#i-check"/></svg><span><b>Tools:</b> Power BI and DAX, Excel and Power Query, KoboToolbox and ODK. SQL and Python in training.</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span><b>Key projects:</b> food trading profitability dashboard (7 cities), executive sales dashboard (20 countries), offline household targeting app.</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span><b>Target roles:</b> Data Analyst, BI Analyst, M&amp;E / MEAL Officer, data trainer.</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span><b>Languages:</b> French (fluent), Fulfulde (native), English (intermediate, good written).</span></li>
+        </ul>
+      </div>
+      <div class="enside">
+        <p class="enhead">Get in touch</p>
+        <a class="btn btn-wa" href="https://wa.me/22671612611?text=Hello%20Hamidou%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity." target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg>Message on WhatsApp</a>
+        <a class="btn btn-ghost" href="mailto:hamidoucisse904@gmail.com?subject=Data%20Analyst%20opportunity"><svg class="ic"><use href="#i-mail"/></svg>hamidoucisse904@gmail.com</a>
+        <p class="encv cv-ondemand" hidden>English CV (Data Analyst) available on request.</p>
+        <div class="encv cv-dl"><a class="btn btn-primary" href="CV_CISSE_Hamidou_Data_Analyst_EN.pdf" download><svg class="ic"><use href="#i-doc"/></svg>Download English CV</a></div>
+        <p class="ennote">Time zone: GMT (UTC+0) · Based in Dori, Burkina Faso</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact gut" id="contact">
+  <div class="wrap">
+    <div class="cbox">
+      <div>
+        <span class="eyebrow">Contact</span>
+        <h2>Un poste à pourvoir ? Parlons-en.</h2>
+        <p class="lead">Appelez-moi ou écrivez-moi : je vous montre comment vos données peuvent vous faire gagner du temps et de l'argent.</p>
+        <div class="practical">
+          <div><small>Disponibilité</small>Ouvert à un poste</div>
+          <div><small>Mode de travail</small>Télétravail, partout dans le monde</div>
+          <div><small>Fuseau horaire</small>GMT (UTC+0)</div>
+          <div><small>Langues</small>Français, Fulfuldé, Anglais</div>
+        </div>
+      </div>
+      <div class="clist">
+        <div class="cl"><span class="ci"><svg class="ic"><use href="#i-wa"/></svg></span><div><small>WhatsApp · réponse la plus rapide</small><a href="https://wa.me/22671612611?text=Bonjour%20Hamidou%2C%20j%27ai%20vu%20votre%20portfolio%20et%20je%20souhaite%20%C3%A9changer%20au%20sujet%20d%27une%20opportunit%C3%A9." target="_blank" rel="noopener">+226 71 61 26 11</a></div><button class="copy" type="button" data-copy="+226 71 61 26 11">Copier</button></div>
+        <div class="cl"><span class="ci"><svg class="ic"><use href="#i-phone"/></svg></span><div><small>Téléphone</small><a href="tel:+22671612611">+226 71 61 26 11</a></div><button class="copy" type="button" data-copy="+226 71 61 26 11">Copier</button></div>
+        <div class="cl"><span class="ci"><svg class="ic"><use href="#i-phone"/></svg></span><div><small>Téléphone</small><a href="tel:+22675698450">+226 75 69 84 50</a></div><button class="copy" type="button" data-copy="+226 75 69 84 50">Copier</button></div>
+        <div class="cl"><span class="ci"><svg class="ic"><use href="#i-mail"/></svg></span><div><small>E-mail</small><a href="mailto:hamidoucisse904@gmail.com?subject=Opportunit%C3%A9%20Data%20Analyst">hamidoucisse904@gmail.com</a></div><button class="copy" type="button" data-copy="hamidoucisse904@gmail.com">Copier</button></div>
+        <div class="cl"><span class="ci"><svg class="ic"><use href="#i-in"/></svg></span><div><small>LinkedIn</small><a href="https://linkedin.com/in/hamidou-cisse-0a5619334" target="_blank" rel="noopener">hamidou-cisse-0a5619334</a></div><span></span></div>
+        <div class="cl cv-ondemand" hidden><span class="ci"><svg class="ic"><use href="#i-doc"/></svg></span><div><small>CV</small><span style="font-weight:600;font-size:17px">Versions Data Analyst et MEAL sur demande</span></div><span></span></div>
+        <div class="cl cv-dl"><span class="ci"><svg class="ic"><use href="#i-doc"/></svg></span><div><small>Télécharger mon CV (PDF)</small><div class="cvrow"><a href="CV_CISSE_Hamidou_Data_Analyst.pdf" download>CV Data Analyst</a><a href="CV_CISSE_Hamidou_MEAL.pdf" download>CV Suivi-évaluation</a></div></div><span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="gut">
+  <div class="wrap">
+    <span>© 2026 Hamidou Cissé · Data Analyst · Dori, Burkina Faso</span>
+    <span>Références disponibles sur demande · <a href="#top">Retour en haut</a></span>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/22671612611?text=Bonjour%20Hamidou%2C%20j%27ai%20vu%20votre%20portfolio%20et%20je%20souhaite%20%C3%A9changer%20au%20sujet%20d%27une%20opportunit%C3%A9." target="_blank" rel="noopener" aria-label="Écrire à Hamidou sur WhatsApp"><svg class="ic"><use href="#i-wa"/></svg>WhatsApp</a>
+
+<div class="mbar" aria-label="Contact rapide">
+  <a class="btn btn-wa" href="https://wa.me/22671612611?text=Bonjour%20Hamidou%2C%20j%27ai%20vu%20votre%20portfolio%20et%20je%20souhaite%20%C3%A9changer%20au%20sujet%20d%27une%20opportunit%C3%A9." target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg>WhatsApp</a>
+  <a class="btn btn-primary" href="tel:+22671612611"><svg class="ic"><use href="#i-phone"/></svg>Appeler</a>
+  <a class="btn btn-ghost" href="mailto:hamidoucisse904@gmail.com?subject=Opportunit%C3%A9%20Data%20Analyst"><svg class="ic"><use href="#i-mail"/></svg>E-mail</a>
+</div>
+
+<script>
+document.querySelectorAll('.copy').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var text = btn.dataset.copy;
+    function done(m){ btn.textContent = m; setTimeout(function(){ btn.textContent = 'Copier'; }, 1600); }
+    function fallback(){
+      var a = btn.parentElement.querySelector('a');
+      var r = document.createRange(); r.selectNodeContents(a);
+      var s = getSelection(); s.removeAllRanges(); s.addRange(r); done('Sélectionné');
+    }
+    try { navigator.clipboard.writeText(text).then(function(){ done('Copié'); }, fallback); } catch(e){ fallback(); }
+  });
+});
+/* Téléchargement des CV dans le lecteur claude.ai (capacité downloads). Hors claude.ai, les liens fonctionnent seuls. */
+(async function(){
+  if (!window.claude || !window.claude.use) return;
+  var dl = null;
+  try { dl = await window.claude.use('downloads'); } catch(e) { dl = null; }
+  if (!dl) return;
+  document.querySelectorAll('.cv-ondemand').forEach(function(e){ e.hidden = true; });
+  document.querySelectorAll('.cv-dl').forEach(function(e){ e.hidden = false; });
+  document.querySelectorAll('.cv-dl a').forEach(function(a){
+    a.addEventListener('click', async function(ev){
+      ev.preventDefault();
+      var label = a.textContent;
+      try {
+        var res = await fetch(a.getAttribute('href'));
+        var blob = await res.blob();
+        await dl.save({ filename: a.getAttribute('href').split('/').pop(), data: blob });
+        a.textContent = 'Téléchargé';
+      } catch(err) {
+        a.textContent = (err && err.code === 'declined') ? label : 'Indisponible ici';
+      }
+      setTimeout(function(){ a.textContent = label; }, 2500);
+    });
+  });
+})();
+</script>
+</body></html>
